@@ -20,9 +20,10 @@ object App {
     println(person)
     println(s"Name: ${person.firstName} ${person.lastName}")
     
-    val secondPerson = new Person(lastName = "Bond")
-    println(s"Name: ${secondPerson.firstName} ${secondPerson.lastName}")
+    val secondPerson = new Person("Peter", "Parker")
+    
+    require(person == secondPerson)
   }
 }
 
-class Person(val firstName: String = "James", val lastName: String)
+case class Person(firstName: String = "James", lastName: String)
