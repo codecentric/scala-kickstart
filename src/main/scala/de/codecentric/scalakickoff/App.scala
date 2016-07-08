@@ -22,9 +22,7 @@ object App {
 
     val heroes = List(peter, bruce, tony)
 
-    val grouped: Map[Int, List[Person]] = heroes.groupBy(_.firstName.length)
-
-    println(grouped)
+    val overAllLength = heroes.map(_.firstName.length).reduce(_-_)
   }
 }
 
