@@ -18,14 +18,13 @@ object App {
   def main(args: Array[String]) = {
     val peter = new Person("Peter", "Parker")
     val bruce = new Person("Bruce", "Wayne")
-
-    val heroes = List(peter, bruce)
-
     val tony = new Person("Tony", "Stark")
 
-    println(tony :: heroes)
-    println(tony +: heroes)
-    println(heroes :+ tony)
+    val heroes = List(peter, bruce, tony)
+
+    val grouped: Map[Int, List[Person]] = heroes.groupBy(_.firstName.length)
+
+    println(grouped)
   }
 }
 
