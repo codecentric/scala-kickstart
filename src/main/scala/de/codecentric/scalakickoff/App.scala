@@ -17,12 +17,14 @@ object App {
 
   def main(args: Array[String]) = {
     val peter = new Person("Peter", "Parker")
-    val bruce = new Person("Bruce", "Wayne")
-    val tony = new Person("Tony", "Stark")
+    
+    val maybePerson: Option[Person] = Some(peter)
 
-    val heroes = List(peter, bruce, tony)
-
-    val overAllLength = heroes.map(_.firstName.length).reduce(_-_)
+    maybePerson match {
+      case Some(person) if person.firstName == "Peter"  => println("It's Peter!")
+      case Some(person)                                 => println(person)
+      case None                                         => println("Nobody")
+    }
   }
 }
 
