@@ -11,13 +11,15 @@ object App {
   // in java: public int giveNumber { return 5 }
   def giveNumber = 5
 
-  def main(args: Array[String]) = {
-    println(s"Hello from Scala $number")
-  }
-  
   def add(a: Int, b: Int) = {
     a + b
   }
+
+  def main(args: Array[String]) = {
+    val person = new Person("Peter", "Parker")
+    println(person)
+    println(s"Name: ${person.firstName} ${person.lastName}")
+  }
 }
 
-class Person
+class Person(val firstName: String, val lastName: String)
