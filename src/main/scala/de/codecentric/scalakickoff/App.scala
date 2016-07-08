@@ -19,3 +19,5 @@ object App {
     a + b
   }
 }
+
+class Person
