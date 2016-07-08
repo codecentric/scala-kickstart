@@ -25,6 +25,13 @@ object App {
       case Some(person)                                 => println(person)
       case None                                         => println("Nobody")
     }
+
+    val tuples = for {
+      x <- 1 until 10
+      y <- 1 until 10
+    } yield (x, y)
+
+    println(tuples)
   }
 }
 
