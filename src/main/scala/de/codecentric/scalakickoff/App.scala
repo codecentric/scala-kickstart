@@ -19,7 +19,10 @@ object App {
     val person = new Person("Peter", "Parker")
     println(person)
     println(s"Name: ${person.firstName} ${person.lastName}")
+    
+    val secondPerson = new Person(lastName = "Bond")
+    println(s"Name: ${secondPerson.firstName} ${secondPerson.lastName}")
   }
 }
 
-class Person(val firstName: String, val lastName: String)
+class Person(val firstName: String = "James", val lastName: String)
