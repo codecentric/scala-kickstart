@@ -16,13 +16,16 @@ object App {
   }
 
   def main(args: Array[String]) = {
-    val person = new Person("Peter", "Parker")
-    println(person)
-    println(s"Name: ${person.firstName} ${person.lastName}")
-    
-    val secondPerson = new Person("Peter", "Parker")
-    
-    require(person == secondPerson)
+    val peter = new Person("Peter", "Parker")
+    val bruce = new Person("Bruce", "Wayne")
+
+    val heroes = List(peter, bruce)
+
+    val tony = new Person("Tony", "Stark")
+
+    println(tony :: heroes)
+    println(tony +: heroes)
+    println(heroes :+ tony)
   }
 }
 
